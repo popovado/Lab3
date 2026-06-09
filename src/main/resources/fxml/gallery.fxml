@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="650.0" prefWidth="800.0"
+      xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ru.itmo.coursework.iterator.GalleryController">
+    <children>
+        <ImageView fx:id="imageView"
+                   fitHeight="500.0" fitWidth="800.0"
+                   pickOnBounds="true" preserveRatio="true"
+                   VBox.vgrow="ALWAYS">
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+        </ImageView>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+            <children>
+                <!-- ComboBox для фильтрации -->
+                <ComboBox fx:id="filterComboBox" prefWidth="120.0">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </HBox.margin>
+                </ComboBox>
+
+                <!-- Кнопка «В начало» -->
+                <Button fx:id="firstButton" mnemonicParsing="false" onAction="#onGoToFirst"
+                        prefHeight="50.0" prefWidth="50.0" text="&lt;&lt;">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Button>
+
+                <!-- Кнопка «Назад» -->
+                <Button fx:id="prevButton" mnemonicParsing="false" onAction="#onPrevButtonClick"
+                        prefHeight="50.0" prefWidth="50.0" text="&lt;">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Button>
+
+                <!-- Кнопка «Вперёд» -->
+                <Button fx:id="nextButton" mnemonicParsing="false" onAction="#onNextButtonClick"
+                        prefHeight="50.0" prefWidth="50.0" text="&gt;">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Button>
+
+                <!-- Кнопка «В конец» -->
+                <Button fx:id="lastButton" mnemonicParsing="false" onAction="#onGoToLast"
+                        prefHeight="50.0" prefWidth="50.0" text="&gt;&gt;">
+                    <HBox.margin>
+                        <Insets right="10.0"/>
+                    </HBox.margin>
+                </Button>
+
+                <!-- Позиция -->
+                <Label fx:id="positionLabel" text="1 из 5" prefWidth="100.0" alignment="CENTER">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </HBox.margin>
+                </Label>
+
+                <!-- Информация о файле -->
+                <Label fx:id="infoLabel" text="" alignment="CENTER" maxWidth="Infinity" wrapText="true">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </HBox.margin>
+                </Label>
+
+                <!-- Автоплей -->
+                <Button fx:id="startAutoButton" mnemonicParsing="false" onAction="#onStartAutoPlay"
+                        prefHeight="50.0" prefWidth="70.0" text="▶ Auto">
+                    <HBox.margin>
+                        <Insets left="10.0" right="5.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="stopAutoButton" mnemonicParsing="false" onAction="#onStopAutoPlay"
+                        prefHeight="50.0" prefWidth="70.0" text="⏹ Stop">
+                    <HBox.margin>
+                        <Insets left="5.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="10.0" top="10.0"/>
+            </padding>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+</VBox>
